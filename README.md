@@ -40,5 +40,18 @@ By combining **image recognition, audio analysis, and automated hardware control
 
 ---
 
-*Developed by [DINESHkumar-D23](https://github.com/DINESHkumar-D23)
+<img width="839" height="637" alt="image" src="https://github.com/user-attachments/assets/f766ef09-1d30-4632-8c32-82569f1382c2" />
+
+
+
+https://github.com/user-attachments/assets/ae611784-1e6d-499b-a9db-cc0dad58e49e
+
+
+https://github.com/user-attachments/assets/876ded36-75a4-4938-beaf-b02375359bc8
+
+
+
+
+[DINESHkumar-D23](https://github.com/DINESHkumar-D23)
 A Special Thanks to my teammates, Aswin S, Abdullah, and Aravind S, for implementing the project as a working prototype.
+

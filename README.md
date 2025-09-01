@@ -8,7 +8,7 @@ A deep learning and IoT-powered project that classifies and segregates household
 
 This project demonstrates a **Smart Waste Bin** capable of automatically sorting waste into the correct bin. It leverages:
 - **Deep Learning (CNN)** for image-based waste classification.
-- **Sound analysis (future extension)** to aid classification.
+- **Sound analysis to aid classification.
 - **Raspberry Pi 5** and **ESP32** for IoT control & mechanical actuation.
 - **PyQt6 desktop interface** for real-time monitoring & visualization.
 

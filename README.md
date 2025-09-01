@@ -1,57 +1,160 @@
-# Smart Waste Segregation System ♻️
+# Smart Waste Segregation System
 
-A smart AI-powered system for **automated waste segregation** using **image classification** and **sound analysis**.  
-This project is designed to classify and sort waste into categories like **plastic, organic, glass, and metal cans**,  
-helping improve waste management efficiency.  
+A deep learning and IoT-powered project that classifies and segregates household waste (plastic, metal, glass, organic) using image classification with CNNs and real-time actuation through Raspberry Pi & ESP32.
 
 ---
 
-## Features
-- **Waste Classification** using a trained PyTorch model (`waste_classifier_final.pt`)
-- **Audio-based Analysis** for additional classification support
-- **Live Webcam Feed** integration with **PyQt6** user interface
-- **Hardware Control** (Raspberry Pi 5 + rotating tray mechanism for sorting)
-- Real-time waste detection and segregation results displayed in UI
+## Project Overview
+
+This project demonstrates a **Smart Waste Bin** capable of automatically sorting waste into the correct bin. It leverages:
+- **Deep Learning (CNN)** for image-based waste classification.
+- **Sound analysis (future extension)** to aid classification.
+- **Raspberry Pi 5** and **ESP32** for IoT control & mechanical actuation.
+- **PyQt6 desktop interface** for real-time monitoring & visualization.
+
+The solution addresses the global challenge of improper waste disposal by ensuring recyclables and organics are automatically separated at the point of disposal.
 
 ---
 
-## Tech Stack
-- **Python 3.9+**
-- **PyTorch** (ML model training & inference)
-- **OpenCV** (image processing)
-- **PyQt6** (desktop GUI)
-- **SoundDevice / TensorFlow** (audio classification)
-- **Raspberry Pi 5** (for hardware control)
+## Algorithm Used
+
+This project uses a **Supervised Deep Learning** algorithm:
+
+- **Model Type**: Convolutional Neural Network (CNN)
+- **Learning Paradigm**: Supervised Learning (images are labeled by category)
+- **Training Method**: Backpropagation with Gradient Descent
+- **Optimizer**: Adam (Adaptive Gradient Descent)
+- **Loss Function**: Cross-Entropy Loss (multi-class classification)
+- **Data Handling**: Mini-batch training with DataLoader
+
+CNNs are chosen over traditional ML because they automatically learn features (edges, shapes, textures) from raw images.
 
 ---
 
 ## Project Structure
 
-Smart-Waste-Segregation-System/
-│── ADR.py # Audio-based waste recognition
-│── ADT.py # Additional detection utilities
-│── train_glass_model.py # Training script for glass classification
-│── ui.py # PyQt6 GUI for live detection
-│── waste_classifier_final.pt # Trained PyTorch model (weights)
-
-## Conclusion
-The **Smart Waste Segregation System** demonstrates how **AI and IoT can work together** to solve real-world problems in waste management.  
-By combining **image recognition, audio analysis, and automated hardware control**, this project provides a scalable and efficient solution for cleaner, smarter, and more sustainable cities.  
+```bash
+Smart-waste-segregation/
+│
+├── dataset/                  # Waste images dataset (plastic, glass, metal, organic)
+├── train_model.py            # CNN training script
+├── waste_model.pt            # Trained PyTorch model (saved weights)
+├── ui_app.py                 # PyQt6 interface for live webcam classification
+├── esp32_code/               # ESP32 firmware for tray & bin control
+├── raspberry_pi_code/        # Pi-side integration with ML + control logic
+└── README.md                 # This documentation
+```
 
 ---
 
-<img width="839" height="637" alt="image" src="https://github.com/user-attachments/assets/f766ef09-1d30-4632-8c32-82569f1382c2" />
+## Features
 
+- **Image-based waste classification** using CNN
+- **One-time task reminders** for disposal & monitoring
+- **ESP32-controlled tray rotation** to drop waste into correct bin
+- **Real-time PyQt6 dashboard** with webcam feed & classification summary
+- **Multi-modal classification** (future: sound-based analysis)
+- **IoT Integration** between Raspberry Pi and ESP32
 
+---
 
-https://github.com/user-attachments/assets/ae611784-1e6d-499b-a9db-cc0dad58e49e
+## Hardware Requirements
 
+- Raspberry Pi 5
+- ESP32 (WiFi-enabled)
+- Servo/Stepper Motor (for rotating top tray)
+- 4 Waste Bins (plastic, organic, glass, metal)
+- Camera Module (USB/Webcam or Pi Camera)
+- Power Supply & Driver Circuitry
 
-https://github.com/user-attachments/assets/876ded36-75a4-4938-beaf-b02375359bc8
+---
 
+## Software Requirements
 
+- **Python 3.10+**
+- **PyTorch** (deep learning framework)
+- **OpenCV** (image capture & preprocessing)
+- **PyQt6** (UI dashboard)
+- **SoundDevice + NumPy** (future sound classification)
+- **Arduino/ESP-IDF** for ESP32 firmware
 
+Install dependencies:
+```bash
+pip install torch torchvision opencv-python pyqt6 sounddevice numpy tensorflow
+```
 
-[DINESHkumar-D23](https://github.com/DINESHkumar-D23)
-A Special Thanks to my teammates, Aswin S, Abdullah, and Aravind S, for implementing the project as a working prototype.
+---
+
+## Model Training
+
+1. Place dataset under `dataset/` with subfolders for each class:
+   ```bash
+   dataset/
+   ├── plastic/
+   ├── glass/
+   ├── metal/
+   └── organic/
+   ```
+
+2. Run the training script:
+   ```bash
+   python train_model.py
+   ```
+
+3. Model will be saved as `waste_model.pt`.
+
+---
+
+## Running the System
+
+1. Start the PyQt6 UI:
+   ```bash
+   python ui_app.py
+   ```
+   - Displays live webcam feed.
+   - Shows predicted waste type.
+
+2. Raspberry Pi sends the classification result to ESP32:
+   - ESP32 receives bin ID (1=Plastic, 2=Glass, 3=Metal, 4=Organic).
+   - Motor rotates tray to drop waste into the corresponding bin.
+
+---
+
+## Example Workflow
+
+1. User drops waste item onto the tray.
+2. Camera captures image → sent to CNN.
+3. CNN predicts category (e.g., **Plastic**).
+4. Raspberry Pi sends control signal to ESP32.
+5. Tray rotates and directs waste to the correct bin.
+6. UI updates with classification history.
+
+---
+
+## Future Improvements
+
+- **Sound-based classification** for metallic items (can detection)
+- **Cloud integration** for data logging & monitoring
+- **Mobile app** to show live stats & waste analytics
+- **Optimization** with lightweight CNNs (MobileNet, EfficientNet) for faster inference
+
+---
+
+## Key Concepts to Mention in Interview
+
+- **Supervised Learning** with labeled dataset.
+- **CNNs** for feature extraction and classification.
+- **Cross-Entropy Loss + Adam optimizer**.
+- **IoT integration**: Raspberry Pi (edge AI) + ESP32 (actuation).
+- **PyQt6 dashboard** for visualization.
+
+---
+
+## Author
+- Developed by DK
+
+---
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 

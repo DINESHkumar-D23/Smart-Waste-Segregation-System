@@ -139,8 +139,8 @@ pip install torch torchvision opencv-python pyqt6 sounddevice numpy tensorflow
 - 
 ---
 
-## Author
-- Developed by Dineshkumar D, 
+## Team
+- Dineshkumar D, 
 - A big thank you to my amazing teammates, Aswin S, Aravind S, and Abdullah, for making this project a success through teamwork and dedication.
  
 ---

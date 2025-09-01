@@ -9,7 +9,7 @@ A deep learning and IoT-powered project that classifies and segregates household
 This project demonstrates a **Smart Waste Bin** capable of automatically sorting waste into the correct bin. It leverages:
 - **Deep Learning (CNN)** for image-based waste classification.
 - **Sound analysis** to aid classification.
-- **Raspberry Pi 5** and **ESP32** for IoT control & mechanical actuation.
+- **ESP32** for IoT control & mechanical actuation.
 - **PyQt6 desktop interface** for real-time monitoring & visualization.
 
 The solution addresses the global challenge of improper waste disposal by ensuring recyclables and organics are automatically separated at the point of disposal.
@@ -60,7 +60,6 @@ Smart-waste-segregation/
 
 ## Hardware Requirements
 
-- Raspberry Pi 5
 - ESP32 (WiFi-enabled)
 - Servo/Stepper Motor (for rotating top tray)
 - 4 Waste Bins (plastic, organic, glass, metal)
@@ -114,7 +113,7 @@ pip install torch torchvision opencv-python pyqt6 sounddevice numpy tensorflow
    - Displays live webcam feed.
    - Shows predicted waste type.
 
-2. Raspberry Pi sends the classification result to ESP32:
+2. The prediction is sent to ESP32:
    - ESP32 receives bin ID (1=Plastic, 2=Glass, 3=Metal, 4=Organic).
    - Motor rotates the tray to drop waste into the corresponding bin.
 
@@ -125,7 +124,7 @@ pip install torch torchvision opencv-python pyqt6 sounddevice numpy tensorflow
 1. User drops waste item onto the tray.
 2. Camera captures image → sent to CNN.
 3. CNN predicts category (e.g., **Plastic**).
-4. Raspberry Pi sends control signal to ESP32.
+4. Then the prediction is sent to the ESP32 for actuation of the servo accordingly.
 5. Tray rotates and directs waste to the correct bin.
 6. UI updates with classification history.
 
@@ -134,20 +133,10 @@ pip install torch torchvision opencv-python pyqt6 sounddevice numpy tensorflow
 ## Future Improvements
 
 - **Sound-based classification** for metallic items (can detect)
-- **Cloud integration** for data logging & monitoring
-- **Mobile app** to show live stats & waste analytics
+- **Cloud integration** for data logging & monitoring (future extension)
+- **Mobile app** to show live stats & waste analytics (future extension)
 - **Optimization** with lightweight CNNs (MobileNet, EfficientNet) for faster inference
-
----
-
-## Key Concepts to Mention in Interview
-
-- **Supervised Learning** with labeled dataset.
-- **CNNs** for feature extraction and classification.
-- **Cross-Entropy Loss + Adam optimizer**.
-- **IoT integration**: Raspberry Pi (edge AI) + ESP32 (actuation).
-- **PyQt6 dashboard** for visualization.
-
+- 
 ---
 
 ## Author

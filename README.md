@@ -51,7 +51,7 @@ Smart-waste-segregation/
 
 - **Image-based waste classification** using CNN
 - **One-time task reminders** for disposal & monitoring
-- **ESP32-controlled tray rotation** to drop waste into correct bin
+- **ESP32-controlled tray rotation** to drop waste into the correct bin
 - **Real-time PyQt6 dashboard** with webcam feed & classification summary
 - **Multi-modal classification** (future: sound-based analysis)
 - **IoT Integration** between Raspberry Pi and ESP32
@@ -87,7 +87,7 @@ pip install torch torchvision opencv-python pyqt6 sounddevice numpy tensorflow
 
 ## Model Training
 
-1. Place dataset under `dataset/` with subfolders for each class:
+1. Place the dataset under `dataset/` with subfolders for each class:
    ```bash
    dataset/
    ├── plastic/
@@ -116,7 +116,7 @@ pip install torch torchvision opencv-python pyqt6 sounddevice numpy tensorflow
 
 2. Raspberry Pi sends the classification result to ESP32:
    - ESP32 receives bin ID (1=Plastic, 2=Glass, 3=Metal, 4=Organic).
-   - Motor rotates tray to drop waste into the corresponding bin.
+   - Motor rotates the tray to drop waste into the corresponding bin.
 
 ---
 
@@ -133,7 +133,7 @@ pip install torch torchvision opencv-python pyqt6 sounddevice numpy tensorflow
 
 ## Future Improvements
 
-- **Sound-based classification** for metallic items (can detection)
+- **Sound-based classification** for metallic items (can detect)
 - **Cloud integration** for data logging & monitoring
 - **Mobile app** to show live stats & waste analytics
 - **Optimization** with lightweight CNNs (MobileNet, EfficientNet) for faster inference
@@ -151,10 +151,19 @@ pip install torch torchvision opencv-python pyqt6 sounddevice numpy tensorflow
 ---
 
 ## Author
-- Developed by DK
-
+- Developed by Dineshkumar D, 
+- A big thank you to my amazing teammates, Aswin S, Aravind S, and Abdullah, for making this project a success through teamwork and dedication.
+ 
 ---
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+<img width="839" height="637" alt="SWG-CAD" src="https://github.com/user-attachments/assets/c9494d9a-8ac8-4cb2-a5e9-a27d375f54e2" />
+
+
+https://github.com/user-attachments/assets/6a686e42-7809-4980-9101-69b41ec1c727
+
+
+https://github.com/user-attachments/assets/8dd4254c-1f23-4664-9159-0d1b3c360bbe
 

@@ -124,7 +124,7 @@ pip install torch torchvision opencv-python pyqt6 sounddevice numpy tensorflow
 1. User drops waste item onto the tray.
 2. Camera captures image → sent to CNN.
 3. CNN predicts category (e.g., **Plastic**).
-4. Then the prediction is sent to the ESP32 for actuation of the servo accordingly.
+4. Then the prediction is sent to the ESP32 for actuation of the servo.
 5. Tray rotates and directs waste to the correct bin.
 6. UI updates with classification history.
 

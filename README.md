@@ -41,7 +41,6 @@ Smart-waste-segregation/
 ├── waste_model.pt            # Trained PyTorch model (saved weights)
 ├── ui_app.py                 # PyQt6 interface for live webcam classification
 ├── esp32_code/               # ESP32 firmware for tray & bin control
-├── raspberry_pi_code/        # Pi-side integration with ML + control logic
 └── README.md                 # This documentation
 ```
 

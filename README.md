@@ -53,7 +53,7 @@ Smart-waste-segregation/
 - **ESP32-controlled tray rotation** to drop waste into the correct bin
 - **Real-time PyQt6 dashboard** with webcam feed & classification summary
 - **Multi-modal classification** (future: sound-based analysis)
-- **IoT Integration** between Raspberry Pi and ESP32
+- **IoT Integration** with ESP32
 
 ---
 
